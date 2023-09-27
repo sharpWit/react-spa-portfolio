@@ -1,8 +1,15 @@
-import { createGlobalStyle } from "styled-components";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-const GlobalStyles = createGlobalStyle`
+@layer base {
+  html {
+    font-family: "'iranyekan', 'IRANSans', 'Tahoma'";
+  }
+}
 
 :root {
+  position: relative;
   &,
   &.light-mode {
     /* Grey */
@@ -131,11 +138,15 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--font-family);
-  color: var(--color-grey-700);
+  background-color: var(--color-grey-100);
+  color: var(--color-grey-900);
 }
 
 /* A elements that don't have a class get default styles */
@@ -254,5 +265,19 @@ select {
   font-display: swap;
 }
 
-`;
-export default GlobalStyles;
+@media (max-width: 700px) {
+  html,
+  html body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overscroll-behavior: none;
+  }
+}
+
+@media (min-width: 701px) {
+  html,
+  html body {
+    touch-action: none;
+  }
+}

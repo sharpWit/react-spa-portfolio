@@ -19,11 +19,7 @@ export default {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {
-      fontFamily: {
-        farsi: "'iranyekan', 'IRANSans', 'Tahoma'",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
